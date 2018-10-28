@@ -33,6 +33,7 @@ body{
 
 a{
     cursor: pointer;
+    outline: none;
 }
 
 
@@ -43,7 +44,7 @@ i{
 }
 
 h1{
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 h2{
@@ -148,13 +149,14 @@ small{
 }
 
 .btn-primary{
-    font-size: 1.5rem;
+    font-size: 1rem;
     outline: none;
     border: 2px solid var(--light);
     background: none;
     color: var(--light);
     padding: 1rem 1.6rem;
     cursor: pointer;
+    font-weight: 700;
 }
 
 /* MAIN */
@@ -215,6 +217,7 @@ small{
     justify-content: space-between;
     width: 50%;
     margin: 4rem 0;
+    flex-wrap: wrap;
 }
 
 .arrivals__item{
@@ -379,4 +382,12 @@ small{
     border: 3px solid var(--grey-dark);
     outline: none;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 900px){
+    .header__nav, .activities, .lookbook, .footer__top, .info, .footer__bottom, .social{
+        width: 90%;
+        flex-wrap: wrap;
+        align-items: center;
+    }
 }
