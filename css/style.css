@@ -101,6 +101,28 @@ small{
     font-size: .8rem !important;
 }
 
+.message{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: .5s all ease-in-out;
+}
+
+.message-appear{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.reveal{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s;
+}
+
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
 /* COMPONENTS */
 
 .header{
@@ -109,7 +131,7 @@ small{
     url('../img/cover13.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
 }
 
 .header__nav{
@@ -143,7 +165,7 @@ small{
 .header__content{
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
     height: 100%;
 }
@@ -164,6 +186,7 @@ small{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 /* LOOKBOOK SECTION */
@@ -198,6 +221,7 @@ small{
     justify-content: center;
     align-items: center;
     margin: 1rem;
+    transition-delay: .2s;
 }
 
 .lookbook__video i{
@@ -225,6 +249,22 @@ small{
     cursor: pointer;
 }
 
+.arrivals__item--1{
+    transition-delay: .2s;
+}
+
+.arrivals__item--2{
+    transition-delay: .3s;
+}
+
+.arrivals__item--3{
+    transition-delay: .4s;
+}
+
+.arrivals__item--4{
+    transition-delay: .5s;
+}
+
 .arrivals__item img{
     width: 12rem;
     height: 12rem;
@@ -241,11 +281,13 @@ small{
 .activities__sustainability{
     background: linear-gradient(rgba(0, 23, 31, .5), rgba(0, 23, 31, .5)),
     url('../img/fashion4.jpg');
+    transition-delay: .2s;
 }
 
 .activities__foundrylife{
     background: linear-gradient(rgba(0, 23, 31, .5), rgba(0, 23, 31, .5)),
     url('../img/cover10.jpg');
+    transition-delay: .3s;
 }
 
 .activities__sustainability,
@@ -286,7 +328,7 @@ small{
     align-items: center;
     background: #1d1d1d;
     width: 100%;
-    padding: 2rem;
+    padding: 2rem 0;
 }
 
 .social__email input{
@@ -391,3 +433,39 @@ small{
         align-items: center;
     }
 }
+
+.agent-1, .agent-3 {
+    opacity: 0;
+    animation: fade-in-top ease .5s forwards;
+}
+  
+.agent-2 {
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: fade-in-top cubic-bezier(0.785, 0.135, 0.15, 0.86) .5s forwards;
+    animation-delay: 0.4s;
+}
+  
+.agent-3 {
+    animation-delay: 0.8s;
+}
+
+@keyframes fade-in-top {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes grow-up {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
